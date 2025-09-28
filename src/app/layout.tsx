@@ -9,6 +9,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Simple Blog</title>
+      </head>
       <body className="min-h-screen flex flex-col bg-gray-50">
         <Header />
         <main className="flex-1">
