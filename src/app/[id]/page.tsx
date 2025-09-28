@@ -1,13 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { postsService } from "@/lib/postService";
+import ConfirmDialog from "@/components/confirm-dialog";
 
 export default function ViewPost() {
   const params = useParams();
   const router = useRouter();
   const id = params?.id;
+  const [confirmOpen, setConfirmOpen] = useState(false);
   
   if (!id || typeof id !== 'string') {
     return (
@@ -26,8 +28,16 @@ export default function ViewPost() {
     );
 
   const handleDelete = () => {
+    setConfirmOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
     postsService.deletePost(id);
     router.push("/");
+  };
+
+  const handleCancelDelete = () => {
+    setConfirmOpen(false);
   };
 
   return (
@@ -56,6 +66,15 @@ export default function ViewPost() {
           </button>
         </div>
       </article>
+      <ConfirmDialog
+        open={confirmOpen}
+        title="Delete post"
+        message="Are you sure you want to delete this post? This action cannot be undone."
+        confirmLabel="Delete"
+        cancelLabel="Cancel"
+        onConfirm={handleConfirmDelete}
+        onCancel={handleCancelDelete}
+      />
     </div>
   );
 }
