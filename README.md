@@ -7,7 +7,6 @@
 ### Installation & Running
 
 1. **Clone and install dependencies:**
-
    ```bash      
    npm install 
    ```
@@ -46,7 +45,7 @@
 - Latest Next.js patterns
 - Better performance (and SEO)
 - Intuitive page structure with File-based routing
-- mage, font, and bundle optimization built in
+- Image, font, and bundle optimization built in
 
 ### Why React Hook Form + Zod?
 - Minimal re-renders
