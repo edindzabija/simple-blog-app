@@ -35,7 +35,7 @@ export default function ViewPost() {
       <article className="bg-white border rounded-lg p-6 max-w-3xl mx-auto">
         <h1 className="text-2xl font-medium mb-2">{post.title}</h1>
         <p className="text-sm text-gray-600 mb-6">
-          {new Date(post.date).toLocaleDateString()} - {post.author}
+          {new Date(post.date).toLocaleDateString('en-GB')} - {post.author}
         </p>
         <div className="prose max-w-none mb-6 text-gray-700">
           {post.content}
