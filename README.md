@@ -1,9 +1,5 @@
 # Simple Blog App
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
 ### Installation & Running
 
 1. **Clone and install dependencies:**

@@ -3,15 +3,14 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import PostForm, { PostFormData } from "@/components/post-form";
-import { Post } from "@/types/post";
 import { postsService } from "@/lib/postService";
 
 export default function EditPost() {
   const params = useParams();
   const id = params?.id;
   const router = useRouter();
-  
-  if (!id || typeof id !== 'string') {
+
+  if (!id || typeof id !== "string") {
     return (
       <div className="container mx-auto px-4 py-8 text-4xl font-bold flex items-center justify-center min-h-screen">
         Invalid post ID!
